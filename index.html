@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: wheat;
+        }
+        body{
+            margin: 0;
+            width: 100wh;
+            height: 100vh;
+            background: url(./pexels-pixabay-276092.jpg) ;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ::-webkit-scrollbar {
+                width: 0px;
+        }
+        .wrapper{
+            width: 20rem;
+            height: 15rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 1rem;
+            background-color: rgba(41, 13, 13, 0.432);
+            box-shadow: inset -0.5rem -0.5rem 1rem
+            rgba(255, 255, 255, 0.5);
+        }
+        .inner button{
+            width: 5rem;
+            height: 2rem;
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .inner button:active{
+            background-color: rgba(255, 255, 255, 0.2);
+            scale: 0.8;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(23, 19, 27, 0.548);
+        }
+        .hide{
+            display: none;
+        }
+        
+        .content{
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(115, 33, 197, 0.548);
+            position: relative;
+        }
+        .content img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .content h3{
+            position: absolute;
+            top: 75%;
+        }
+        .unhide{
+            display:flex ;
+        }
+    </style>
+</head>
+<body>
+   <div class="container ">
+    <div class="wrapper">
+        <h4>This web is for handless people</h4>
+        <h5>Don't use it if you have two hand 🥴 </h5>
+        <div class="inner">
+            <button>start</button>
+        </div>
+    </div>
+    
+</div>
+    <div class="content">
+        <img src="./WhatsApp_Image_2024-01-08_at_12.29.40_PM-removebg-preview.png" alt="">
+        <h3>Iske pas to hath hi nahi hai 🥴  </h3>
+        <audio autoplay loop src="./song.mp3"></audio>
+    </div>
+
+   <script>
+    const startBtn = document.querySelector('.inner button');
+    const contain = document.querySelector('.container');
+    const content = document.querySelector('.content');
+    const audio = document.querySelector('audio');
+    audio.paused = true;
+    startBtn.addEventListener('click', () => {
+        contain.classList.add("hide");
+        content.classList.add("unhide");
+        audio.play();
+    })
+    console.log(audio)
+   </script>
+</body>
+</html>
